@@ -19,7 +19,7 @@ $(document).ready(function() {
   // When the generate button is clicked, populate the grid from server
   $('#generate').on('click', function(e) {
     e.preventDefault();
-    $.getJSON("generator.php", function(data) {
+    $.getJSON("lib/generator.php", function(data) {
       populateGrid(data);
     });
     return false;
@@ -31,7 +31,7 @@ $(document).ready(function() {
     e.preventDefault();
     // Remove the disabled attribute or the data won't make it to the server
     $('input.fixed', '#grid').removeAttr('disabled');
-    $.post("solver.php", $('#gameform').serialize(), function(data) {
+    $.post("lib/solver.php", $('#gameform').serialize(), function(data) {
       populateGrid(data);
     });
     $('input.fixed', '#grid').attr('disabled','disabled');

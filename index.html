@@ -1,0 +1,147 @@
+<html>
+  <head>
+    <title>Sudoku Solver Script in PHP</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h2 class="title">Magnificent Sudoku Solver</h2>
+      <form id="gameform" method="POST">
+        <table id="grid">
+          <tr class="row-0">
+            <td class="col-0"><input maxlength="1" name="puzzle[0][0]" /></td>
+            <td class="col-1"><input maxlength="1" name="puzzle[0][1]" /></td>
+            <td class="col-2"><input maxlength="1" name="puzzle[0][2]" /></td>
+
+            <td class="col-3"><input maxlength="1" name="puzzle[0][3]" /></td>
+            <td class="col-4"><input maxlength="1" name="puzzle[0][4]" /></td>
+            <td class="col-5"><input maxlength="1" name="puzzle[0][5]" /></td>
+
+            <td class="col-6"><input maxlength="1" name="puzzle[0][6]" /></td>
+            <td class="col-7"><input maxlength="1" name="puzzle[0][7]" /></td>
+            <td class="col-8"><input maxlength="1" name="puzzle[0][8]" /></td>
+          </tr>
+
+          <tr class="row-1">
+            <td class="col-0"><input maxlength="1" name="puzzle[1][0]" /></td>
+            <td class="col-1"><input maxlength="1" name="puzzle[1][1]" /></td>
+            <td class="col-2"><input maxlength="1" name="puzzle[1][2]" /></td>
+
+            <td class="col-3"><input maxlength="1" name="puzzle[1][3]" /></td>
+            <td class="col-4"><input maxlength="1" name="puzzle[1][4]" /></td>
+            <td class="col-5"><input maxlength="1" name="puzzle[1][5]" /></td>
+
+            <td class="col-6"><input maxlength="1" name="puzzle[1][6]" /></td>
+            <td class="col-7"><input maxlength="1" name="puzzle[1][7]" /></td>
+            <td class="col-8"><input maxlength="1" name="puzzle[1][8]" /></td>
+          </tr>
+
+          <tr class="row-2">
+            <td class="col-0"><input maxlength="1" name="puzzle[2][0]" /></td>
+            <td class="col-1"><input maxlength="1" name="puzzle[2][1]" /></td>
+            <td class="col-2"><input maxlength="1" name="puzzle[2][2]" /></td>
+
+            <td class="col-3"><input maxlength="1" name="puzzle[2][3]" /></td>
+            <td class="col-4"><input maxlength="1" name="puzzle[2][4]" /></td>
+            <td class="col-5"><input maxlength="1" name="puzzle[2][5]" /></td>
+
+            <td class="col-6"><input maxlength="1" name="puzzle[2][6]" /></td>
+            <td class="col-7"><input maxlength="1" name="puzzle[2][7]" /></td>
+            <td class="col-8"><input maxlength="1" name="puzzle[2][8]" /></td>
+          </tr>
+
+          <tr class="row-3">
+            <td class="col-0"><input maxlength="1" name="puzzle[3][0]" /></td>
+            <td class="col-1"><input maxlength="1" name="puzzle[3][1]" /></td>
+            <td class="col-2"><input maxlength="1" name="puzzle[3][2]" /></td>
+
+            <td class="col-3"><input maxlength="1" name="puzzle[3][3]" /></td>
+            <td class="col-4"><input maxlength="1" name="puzzle[3][4]" /></td>
+            <td class="col-5"><input maxlength="1" name="puzzle[3][5]" /></td>
+
+            <td class="col-6"><input maxlength="1" name="puzzle[3][6]" /></td>
+            <td class="col-7"><input maxlength="1" name="puzzle[3][7]" /></td>
+            <td class="col-8"><input maxlength="1" name="puzzle[3][8]" /></td>
+          </tr>
+
+          <tr class="row-4">
+            <td class="col-0"><input maxlength="1" name="puzzle[4][0]" /></td>
+            <td class="col-1"><input maxlength="1" name="puzzle[4][1]" /></td>
+            <td class="col-2"><input maxlength="1" name="puzzle[4][2]" /></td>
+
+            <td class="col-3"><input maxlength="1" name="puzzle[4][3]" /></td>
+            <td class="col-4"><input maxlength="1" name="puzzle[4][4]" /></td>
+            <td class="col-5"><input maxlength="1" name="puzzle[4][5]" /></td>
+
+            <td class="col-6"><input maxlength="1" name="puzzle[4][6]" /></td>
+            <td class="col-7"><input maxlength="1" name="puzzle[4][7]" /></td>
+            <td class="col-8"><input maxlength="1" name="puzzle[4][8]" /></td>
+          </tr>
+
+          <tr class="row-5">
+            <td class="col-0"><input maxlength="1" name="puzzle[5][0]" /></td>
+            <td class="col-1"><input maxlength="1" name="puzzle[5][1]" /></td>
+            <td class="col-2"><input maxlength="1" name="puzzle[5][2]" /></td>
+
+            <td class="col-3"><input maxlength="1" name="puzzle[5][3]" /></td>
+            <td class="col-4"><input maxlength="1" name="puzzle[5][4]" /></td>
+            <td class="col-5"><input maxlength="1" name="puzzle[5][5]" /></td>
+
+            <td class="col-6"><input maxlength="1" name="puzzle[5][6]" /></td>
+            <td class="col-7"><input maxlength="1" name="puzzle[5][7]" /></td>
+            <td class="col-8"><input maxlength="1" name="puzzle[5][8]" /></td>
+          </tr>
+
+          <tr class="row-6">
+            <td class="col-0"><input maxlength="1" name="puzzle[6][0]" /></td>
+            <td class="col-1"><input maxlength="1" name="puzzle[6][1]" /></td>
+            <td class="col-2"><input maxlength="1" name="puzzle[6][2]" /></td>
+
+            <td class="col-3"><input maxlength="1" name="puzzle[6][3]" /></td>
+            <td class="col-4"><input maxlength="1" name="puzzle[6][4]" /></td>
+            <td class="col-5"><input maxlength="1" name="puzzle[6][5]" /></td>
+
+            <td class="col-6"><input maxlength="1" name="puzzle[6][6]" /></td>
+            <td class="col-7"><input maxlength="1" name="puzzle[6][7]" /></td>
+            <td class="col-8"><input maxlength="1" name="puzzle[6][8]" /></td>
+          </tr>
+
+          <tr class="row-7">
+            <td class="col-0"><input maxlength="1" name="puzzle[7][0]" /></td>
+            <td class="col-1"><input maxlength="1" name="puzzle[7][1]" /></td>
+            <td class="col-2"><input maxlength="1" name="puzzle[7][2]" /></td>
+
+            <td class="col-3"><input maxlength="1" name="puzzle[7][3]" /></td>
+            <td class="col-4"><input maxlength="1" name="puzzle[7][4]" /></td>
+            <td class="col-5"><input maxlength="1" name="puzzle[7][5]" /></td>
+
+            <td class="col-6"><input maxlength="1" name="puzzle[7][6]" /></td>
+            <td class="col-7"><input maxlength="1" name="puzzle[7][7]" /></td>
+            <td class="col-8"><input maxlength="1" name="puzzle[7][8]" /></td>
+          </tr>
+
+          <tr class="row-8">
+            <td class="col-0"><input maxlength="1" name="puzzle[8][0]" /></td>
+            <td class="col-1"><input maxlength="1" name="puzzle[8][1]" /></td>
+            <td class="col-2"><input maxlength="1" name="puzzle[8][2]" /></td>
+
+            <td class="col-3"><input maxlength="1" name="puzzle[8][3]" /></td>
+            <td class="col-4"><input maxlength="1" name="puzzle[8][4]" /></td>
+            <td class="col-5"><input maxlength="1" name="puzzle[8][5]" /></td>
+
+            <td class="col-6"><input maxlength="1" name="puzzle[8][6]" /></td>
+            <td class="col-7"><input maxlength="1" name="puzzle[8][7]" /></td>
+            <td class="col-8"><input maxlength="1" name="puzzle[8][8]" /></td>
+          </tr>
+
+        </table>
+        <div class="button-container">
+          <input id="generate" type="submit" value="Generate" />
+          <input id="solve" type="submit" value="Solve!" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

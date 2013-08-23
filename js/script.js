@@ -33,7 +33,7 @@ $(document).ready(function() {
     $('input.fixed', '#grid').removeAttr('disabled');
     $.post("lib/solver.php", $('#gameform').serialize(), function(data) {
       populateGrid(data);
-    });
+    }, 'json');
     $('input.fixed', '#grid').attr('disabled','disabled');
     return false;
   });
@@ -41,6 +41,7 @@ $(document).ready(function() {
   // Takes a 2 dimentional array and uses it to populate the grid.
   // First level are rows, second level are columns.
   function populateGrid(data) {
+    console.log(data);
     $.each(data, function(i, cols) {
       $.each(cols, function(j, item) {
         if(item!=0) {
